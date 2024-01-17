@@ -139,7 +139,7 @@ async def getIds(video):
 @Mbot.on_message(filters.regex(r'https?://.*youtube[^\s]+') & filters.incoming|filters.regex(r'(https?:\/\/(?:www\.)?youtu\.?be(?:\.com)?\/.*)') & filters.incoming)
 async def _(Mbot,message):
     try:
-        m = await message.reply_sticker("CAACAgIAAxkBATWhF2Qz1Y-FKIKqlw88oYgN8N82FtC8AAJnAAPb234AAT3fFO9hR5GfHgQ")
+        m = await message.reply_sticker("CAACAgUAAxkBAAIKI2Wn01-4FLtsSmgsP1OoZDz9NdGlAALpAQACvSDSJtCwRY2pJYUcNAQ")
     except:
         pass
     link = message.matches[0].group(0)
@@ -160,11 +160,11 @@ async def _(Mbot,message):
             await m.delete()
             if LOG_GROUP:
                await Mbot.send_message(LOG_GROUP,f"YouTube Shorts {e} {link}")
-               await message.reply(f"400: Sorry, Unable To Find It  try another or report it  to @masterolic or support chat @spotify_supportbot 🤖  ")
+               await message.reply(f"400: Sorry, Unable To Find It  try another 🤖  ")
                print(traceback.format_exc())
                await Mbot.send_message(LOG_GROUP, traceback.format_exc())
                
-        return await message.reply("Check out @spotify_downloa_bot(music)  @spotifynewss(Channel) \n Please Support Us By /donate To Maintain This Project")
+        return await message.reply("Please Support Us By /donate To Maintain This Project")
     try:
         if "music.youtube.com" in link:
             link=link.replace("music.youtube.com","youtube.com")
@@ -190,11 +190,11 @@ async def _(Mbot,message):
         await m.delete()
         if os.path.exists(randomdir):
            rmtree(randomdir)
-        await message.reply("Check out @spotify_downloa_bot(music)  @spotifynewss(Channel) \n Please Support Us By /donate To Maintain This Project")
+        await message.reply(" Please Support Us By /donate To Maintain This Project")
     except Exception as e:
         print(e)
         if LOG_GROUP:
                await Mbot.send_message(LOG_GROUP,f"Youtube {e} {link}")
-               await message.reply(f"400: Sorry, Unable To Find It  try another or report it  to @masterolic or support chat @spotify_supportbot 🤖  ")
+               await message.reply(f"400: Sorry, Unable To Find It  try another 🤖  ")
                await Mbot.send_message(LOG_GROUP, traceback.format_exc())
             
