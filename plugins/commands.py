@@ -19,11 +19,11 @@ async def monitor(Mbot, message):
           
 @Mbot.on_message(filters.command("start") & filters.incoming)
 async def start(Mbot, message):
-          await message.reply(f"**Hello 👋👋 {message.from_user.mention()}\nI am A Simple Telegram Bot Can Download From Multiple Social Media**.\n\n`Currently Support Instagram ,TikTok, Twitter, Facebook , YouTube(Music and shorts) And So On....!🌷📥 ` \n\n** #Instagram #TikTok #Twitter #Facebook #YouTube**")
+          await message.reply(f"**Hello 👋👋 {message.from_user.mention()}**\n**I am A Simple Telegram Bot Can Download From Multiple Social Media**.\n\n`Currently Support Instagram ,TikTok, Twitter, Facebook , YouTube(Music and shorts) And So On....!🌷📥 ` \n\n** #Instagram #TikTok #Twitter #Facebook #YouTube**")
           
 @Mbot.on_message(filters.command("help") & filters.incoming)
 async def help(Mbot, message):
           await message.reply("This is user friendly bot so you can simple send your Instagram reel and post links here:) \n eg: `https://www.instagram.com/p/C2Mi5YhR8Uh/?igsh=MTlpZGNicnp5eDIwYQ==`\n `post:` `https://www.instagram.com/p/C2Mi5YhR8Uh/?igsh=MTlpZGNicnp5eDIwYQ==`")
 @Mbot.on_message(filters.command("donate") & filters.command("Donate") & filters.incoming )
 async def donate(_, message):
-       await message.reply_text(f"Contact 🍪 **@signature_98** ")
+       await message.reply_text(f"Contact 🎾 **@signature_98** ")
