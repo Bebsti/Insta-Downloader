@@ -4,7 +4,6 @@ from bot import DUMP_GROUP
 from apscheduler.schedulers.background import BackgroundScheduler
 from sys import executable
 from os import sys , execl , environ 
-from aiogram import types
 # if you are using service like heroku after restart it changes ip which avoid Ip Blocking Also Restart When Unknown Error occurred and bot is idle 
 RESTART_ON = environ.get('RESTART_ON')
 def restart():
@@ -20,15 +19,8 @@ async def monitor(Mbot, message):
           
 @Mbot.on_message(filters.command("start") & filters.incoming)
 async def start(Mbot, message):
-          # Create a keyboard with a button that opens a URL
-    keyboard = types.InlineKeyboardMarkup()
-    button_text = "Visit BotFather"
-    button_url = "https://t.me/botfather"
-    keyboard.add(types.InlineKeyboardButton(text=button_text, url=button_url))
-#--------------------------
-          await message.reply(f"**Hello 👋👋 {message.from_user.mention()}**\n**I am A Simple Telegram Bot Can Download From Multiple Social Media**.\n\n`Currently Support Instagram ,TikTok, Twitter, Facebook , YouTube(Music and shorts) And So On....!🌷📥 `\n\n**HOW?** : `send a link to me` \n\n** #Instagram #TikTok #Twitter #Facebook #YouTube**",
-                             reply_markup=keyboard
-                             )
+
+          await message.reply(f"**Hello 👋👋 {message.from_user.mention()}**\n**I am A Simple Telegram Bot Can Download From Multiple Social Media**.\n\n`Currently Support Instagram ,TikTok, Twitter, Facebook , YouTube(Music and shorts) And So On....!🌷📥 `\n\n**HOW?** : `send a link to me` \n\n** #Instagram #TikTok #Twitter #Facebook #YouTube**")
           
 @Mbot.on_message(filters.command("help") & filters.incoming)
 async def help(Mbot, message):
