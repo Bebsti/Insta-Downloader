@@ -6,7 +6,7 @@ from database.database import *
 from config import *
 from plugins.commands import decode
 
-@Client.on_message(filters.private & filters.incoming)
+@Mbot.on_message(filters.private & filters.incoming)
 async def forcesub(c, m):
     owner = await c.get_users(int(OWNER_ID))
     if UPDATE_CHANNEL:
@@ -16,7 +16,7 @@ async def forcesub(c, m):
                await m.reply_text("**Hey you are banned 😜**", quote=True)
                return
         except UserNotParticipant:
-            buttons = [[InlineKeyboardButton(text='Updates Channel 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
+            buttons = [[InlineKeyboardButton(text='Updates Channel 🔖', url=f"https://t.me/world_wide_movies")]]
             if m.text:
                 if (len(m.text.split()) > 1) & ('start' in m.text):
                     decoded_data = await decode(m.text.split()[1])
@@ -36,7 +36,7 @@ async def forcesub(c, m):
     await m.continue_propagation()
 
 
-@Client.on_callback_query(filters.regex('^refresh'))
+@Mbot.on_callback_query(filters.regex('^refresh'))
 async def refresh_cb(c, m):
     owner = await c.get_users(int(OWNER_ID))
     if UPDATE_CHANNEL:
